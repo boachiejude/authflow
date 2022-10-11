@@ -1,0 +1,104 @@
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: whitesmoke;
+    padding: auto;
+}
+
+p {
+    text-align: right;
+    font-size: smaller;
+}
+
+label {
+    font-weight: bold;
+}
+
+.err {
+    visibility: hidden;
+    color: red;
+    font-size: x-small;
+    text-align: left;
+}
+
+#show_button {
+    margin-left: 33%;
+    padding: 3%;
+    border-radius: 5px;
+    text-align: right;
+    font-size: small;
+    cursor: pointer;
+}
+
+span:hover {
+    color: blue;
+}
+
+#error-msg {
+    width: 96..5%;
+    height: 0px;
+    background-color: white;
+    font-size: small;
+    border-radius: 5px;
+    text-align: center;
+    transition: 0.3s;
+    margin: 1%;
+    padding: 2%;
+}
+.card {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    height: 470px;
+    width: 330px;
+    padding: 3%;
+    margin-top: 2%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header {
+    font-size: 30px;
+    font-weight: bolder;
+    padding: 50px;
+    background-color: aliceblue;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.credential-field {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input {
+    height: 30px;
+    width: 96.5%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 6px;
+    border: none;
+    border-radius: 5px;
+    background-color: whitesmoke;
+}
+
+.submit-button {
+    background-color: blue;
+    border: none;
+    border-radius: 5px;
+    padding: 2%;
+    color: white;
+    font-weight: bolder;
+    cursor: pointer;
+    width: 100%;
+    margin: 1%;
+    margin-left: auto;
+}
+
+.credit {
+    padding: 4%;
+    text-align: center;
+    font-size: xx-small;
+}

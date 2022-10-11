@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>megaminds inc.</title>
+    </head>
+    <body>
+        <div class="card">
+            <div class="header">
+                Megaminds Inc.
+            </div>
+            <div id="error-msg">
+            </div>
+            <div class="form">
+                <div class="credential-field">
+                    <label for="email">Email</label><br>
+                    <input id="email-address" type="email" placeholder="Enter your email"><br>
+                    <p class = "err" id="emailerr">Invalid email address</p>
+                </div>
+
+                <div class="credential-field">
+                    <label for="password">Password</label>  <span id="show_button" onclick="show_password()">Show/Hide password</span> <br>
+                    <input id="password" type="password" placeholder="Enter your password"><br>
+                    <p class = "err" id="passworderr">Incorrect password</p>
+                </div>
+                
+                <div class="credential-field">
+                    <button onclick="validate()" id = "submit-button" class="submit-button"> login </button>
+                </div>
+                <p><a href="forgot-password.html">Forgot password?</a></p>
+            </div>
+        </div>
+        <div class="credit">
+            by: Jude Boachie <br>
+            Megaminds Inc.
+        </div>
+    </body>
+    <script>
+        function validate() {
+            setTimeout(validater, 2000);
+            button = document.getElementById("submit-button");
+            button.innerHTML = "logging in...";
+        };
+
+        function validater() {
+            error_msg = document.getElementById("error-msg");
+            error_msg.style.visibility = "hidden";
+
+            var correct_email = "email@email.com";
+            email = document.getElementById("email-address");
+            emailerr = document.getElementById("emailerr");
+
+            var correct_password = "Pass200?";
+            password = document.getElementById("password");
+            passworderr = document.getElementById("passworderr");
+            
+            button = document.getElementById("submit-button");
+
+            if (email.value != correct_email) {
+                error_msg.style.visibility = "visible";
+                passworderr.style.visibility = "hidden";
+                error_msg.style.color = "red";
+                error_msg.style.height = "35px"
+                error_msg.style.background = "rgba(255, 0, 0, 0.4)";
+                button.innerHTML = "login";
+                error_msg.innerHTML = "Enter valid credentials. Password or email might be wrong.";
+                emailerr.style.visibility = "visible";
+                emailerr.innerHTML = "Invalid email address";
+            }
+            else{
+                if (password.value.length < 8) {
+                    passworderr.style.visibility = "visible";
+                    emailerr.style.visibility = "hidden";
+                    passworderr.innerHTML = "Password must be 8 characters long";
+                    button.innerHTML = "login";
+                    return;
+                };
+                
+                if (password.value != correct_password) {
+                    error_msg.style.visibility = "visible";
+                    error_msg.style.color = "red";
+                    error_msg.style.height = "35px"
+                    error_msg.style.background = "rgba(255, 0, 0, 0.4)";
+                    button.innerHTML = "login";
+                    error_msg.innerHTML = "Enter valid credentials. Password or email might be wrong.";
+                    passworderr.style.visibility = "visible";
+                    passworderr.innerHTML = "Incorrect password";
+                }
+                else {
+                    error_msg.style.visibility = "visible";
+                    error_msg.style.color = "green";
+                    error_msg.style.height = "35px"
+                    error_msg.style.background = "rgba(0, 255, 0, 0.4)";
+                    button.innerHTML = "logged in";
+                    error_msg.innerHTML = "Validated";
+                    setTimeout(relocate, 500);
+                };
+            };
+        };
+
+        function relocate () {
+            location.href = "https:\//github.com/";
+        }
+
+        function show_password () {
+            passField = document.getElementById("password");
+            if (passField.type == "password") {
+                passField.type = "text";
+            }
+            else {
+                if (passField.type == "text") {
+                    passField.type = "password";
+                };
+            };
+        };
+
+    </script>
+</html>
